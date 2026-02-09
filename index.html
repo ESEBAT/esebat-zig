@@ -10,12 +10,14 @@
       --orange: #ff6600;
       --blanc: #ffffff;
       --gris-clair: #f5f5f5;
+      --gris-fonce: #333333;
     }
 
     /* ===== Reset & Base ===== */
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; background: var(--gris-clair); color: #333; }
+    body { font-family: 'Arial', sans-serif; line-height: 1.6; background: var(--gris-clair); color: var(--gris-fonce); }
     a { text-decoration: none; color: inherit; }
+    h1, h2, h3 { color: var(--orange); }
 
     /* ===== Header ===== */
     header {
@@ -24,7 +26,7 @@
       padding: 20px;
       text-align: center;
     }
-    header h1 { margin-bottom: 5px; }
+    header h1 { margin-bottom: 5px; font-size: 2rem; }
     header p { font-size: 1rem; }
 
     /* ===== Navigation ===== */
@@ -32,6 +34,7 @@
       background: var(--blanc);
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
@@ -47,13 +50,22 @@
       color: #e65c00;
     }
 
+    /* ===== Hero ===== */
+    .hero {
+      background: var(--orange);
+      color: var(--blanc);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h2 { font-size: 2rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.2rem; }
+
     /* ===== Sections ===== */
     section {
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
     }
-    section h2 { color: var(--orange); margin-bottom: 15px; }
     .card {
       background: var(--blanc);
       padding: 20px;
@@ -83,15 +95,12 @@
       margin-top: 40px;
     }
 
-    /* ===== Hero ===== */
-    .hero {
-      background: var(--orange);
-      color: var(--blanc);
-      padding: 80px 20px;
-      text-align: center;
+    /* ===== Responsive ===== */
+    @media(max-width:768px){
+      nav { flex-direction: column; }
+      nav a { text-align: center; width: 100%; padding: 12px 0; }
     }
-    .hero h2 { font-size: 2rem; margin-bottom: 15px; }
-    .hero p { font-size: 1.2rem; }
+
   </style>
 </head>
 <body>
@@ -103,10 +112,12 @@
 
 <nav>
   <a href="#accueil">Accueil</a>
-  <a href="#genie-civil">Génie Civil</a>
-  <a href="#electrotechnique">Électrotechnique</a>
-  <a href="#electromecanique">Electromécanique</a>
-  <a href="#geometre">Géomètre</a>
+  <a href="#formations">Formations</a>
+  <a href="#admission">Admission</a>
+  <a href="#temoignages">Témoignages</a>
+  <a href="#direction">La Direction</a>
+  <a href="#bde">Bureau des Étudiants</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero" id="accueil">
@@ -114,48 +125,68 @@
   <p>Votre portail officiel pour les annonces, emplois du temps et informations de l’école.</p>
 </section>
 
-<section id="genie-civil">
+<section id="formations">
+  <h2>Formations</h2>
   <div class="card">
-    <h2>Génie Civil & Construction</h2>
-    <p>
-      Filière axée sur l’étude des structures, la gestion de projets de construction et l’ingénierie des infrastructures. 
-      Prépare aux métiers du BTP avec une forte composante pratique.
-    </p>
-    <p><strong>Débouchés :</strong> Ingénieur génie civil, chef de chantier, technicien bureau d’études, responsable de projets.</p>
+    <h3>Génie Civil & Construction</h3>
+    <p>Formation sur les structures, gestion de projets et BTP avec pratique intensive.</p>
+    <a class="btn" href="#">En savoir plus</a>
+  </div>
+  <div class="card">
+    <h3>Électrotechnique / Génie Électrique</h3>
+    <p>Spécialisation en énergie, installations industrielles et maintenance électrique.</p>
+    <a class="btn" href="#">En savoir plus</a>
+  </div>
+  <div class="card">
+    <h3>Electromécanique & Systèmes Automatisés</h3>
+    <p>Combinaison de mécanique, électricité et automatisation pour l’industrie moderne.</p>
+    <a class="btn" href="#">En savoir plus</a>
+  </div>
+  <div class="card">
+    <h3>Géomètre-Topographe</h3>
+    <p>Formation sur topographie, cartographie et outils modernes (GPS, station totale).</p>
     <a class="btn" href="#">En savoir plus</a>
   </div>
 </section>
 
-<section id="electrotechnique">
+<section id="admission">
+  <h2>Admission</h2>
   <div class="card">
-    <h2>Électrotechnique / Génie Électrique</h2>
-    <p>
-      Formation des spécialistes en énergie électrique, installations industrielles et maintenance électrique.
-    </p>
-    <p><strong>Débouchés :</strong> Technicien électricien industriel, ingénieur électrotechnique, responsable de maintenance, expert en énergies renouvelables.</p>
+    <p>Découvrez les conditions d’admission, les programmes d’inscription et les pièces nécessaires pour rejoindre l’ESEBAT.</p>
     <a class="btn" href="#">En savoir plus</a>
   </div>
 </section>
 
-<section id="electromecanique">
+<section id="temoignages">
+  <h2>Témoignages</h2>
   <div class="card">
-    <h2>Electromécanique & Systèmes Automatisés (EMSA)</h2>
-    <p>
-      Combine mécanique, électricité et automatisation pour former des professionnels de l’industrie moderne.
-    </p>
-    <p><strong>Débouchés :</strong> Technicien électromécanicien, automaticien industriel, responsable maintenance, spécialiste optimisation.</p>
-    <a class="btn" href="#">En savoir plus</a>
+    <p>"L’ESEBAT m’a permis de trouver mon premier emploi dans le BTP grâce à sa formation pratique et son réseau." – Étudiant diplômé</p>
+  </div>
+  <div class="card">
+    <p>"Excellente école avec des enseignants expérimentés et un suivi personnalisé des étudiants." – Étudiante en Génie Civil</p>
   </div>
 </section>
 
-<section id="geometre">
+<section id="direction">
+  <h2>La Direction</h2>
   <div class="card">
-    <h2>Géomètre-Topographe</h2>
-    <p>
-      Filière centrée sur la topographie, la cartographie et les mesures de terrain avec outils modernes (GPS, station totale).
-    </p>
-    <p><strong>Débouchés :</strong> Géomètre-topographe, spécialiste SIG, technicien cartographe, expert en urbanisme.</p>
-    <a class="btn" href="#">En savoir plus</a>
+    <p>Rencontrez le Directeur, l’équipe administrative et pédagogique de l’ESEBAT Ziguinchor.</p>
+  </div>
+</section>
+
+<section id="bde">
+  <h2>Bureau des Étudiants (BDE)</h2>
+  <div class="card">
+    <p>Découvrez les activités, clubs et initiatives étudiantes, ainsi que les contacts pour rejoindre le BDE.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: contact@esebat.sn</p>
+    <p>Téléphone: +221 33 000 00 00</p>
+    <p>Adresse: Ziguinchor, Sénégal</p>
   </div>
 </section>
 
