@@ -1,97 +1,154 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>ESEBAT Ziguinchor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f6f8;
-            color: #333;
-        }
-        header {
-            background: #0b3c5d;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background: #062a40;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-        footer {
-            background: #0b3c5d;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>ESEBAT Ziguinchor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ===== Couleurs ===== */
+    :root {
+      --bleu: #0b3c5d;
+      --orange: #ff6600;
+      --blanc: #ffffff;
+      --gris-clair: #f5f5f5;
+    }
+
+    /* ===== Reset & Base ===== */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; background: var(--gris-clair); color: #333; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== Header ===== */
+    header {
+      background: var(--bleu);
+      color: var(--blanc);
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 { margin-bottom: 5px; }
+    header p { font-size: 1rem; }
+
+    /* ===== Navigation ===== */
+    nav {
+      background: var(--blanc);
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      padding: 15px 20px;
+      font-weight: bold;
+      color: var(--bleu);
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: var(--orange);
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 { color: var(--bleu); margin-bottom: 15px; }
+    .card {
+      background: var(--blanc);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--blanc);
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #e65c00; }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--bleu);
+      color: var(--blanc);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: var(--bleu);
+      color: var(--blanc);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h2 { font-size: 2rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.2rem; }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>ESEBAT – Ziguinchor</h1>
-    <p>École Supérieure d’Enseignement du Bâtiment et des Travaux Publics</p>
+  <h1>ESEBAT – Ziguinchor</h1>
+  <p>École Supérieure d’Enseignement du Bâtiment et des Travaux Publics</p>
 </header>
 
 <nav>
-    <a href="#">Accueil</a>
-    <a href="#">Présentation</a>
-    <a href="#">Formations</a>
-    <a href="#">Administration</a>
-    <a href="#">Contact</a>
+  <a href="#accueil">Accueil</a>
+  <a href="#genie-civil">Génie Civil</a>
+  <a href="#electrotechnique">Électrotechnique</a>
+  <a href="#electromecanique">Electromécanique</a>
+  <a href="#geometre">Géomètre</a>
 </nav>
 
-<section>
-    <h2>Bienvenue à l’ESEBAT</h2>
-    <p>
-        L’École Supérieure d’Enseignement du Bâtiment et des Travaux Publics (ESEBAT),
-        basée à Ziguinchor, est une institution dédiée à la formation des professionnels
-        qualifiés dans les domaines du BTP et des métiers techniques.
-    </p>
-
-    <p>
-        Notre mission est de former une jeunesse compétente, responsable et prête à
-        relever les défis du développement infrastructurel.
-    </p>
+<section class="hero" id="accueil">
+  <h2>Bienvenue à l’ESEBAT Ziguinchor</h2>
+  <p>Votre portail officiel pour les annonces, emplois du temps et informations de l’école.</p>
 </section>
 
-<section>
-    <h2>Nos formations</h2>
-    <ul>
-        <li>Bâtiment et Travaux Publics</li>
-        <li>Génie civil</li>
-        <li>Topographie</li>
-        <li>Maintenance et techniques de construction</li>
-    </ul>
+<section id="genie-civil">
+  <div class="card">
+    <h2>Génie Civil & Construction</h2>
+    <p>Prépare les étudiants aux métiers de la construction, de la gestion de chantiers et de l’ingénierie des infrastructures.</p>
+    <a class="btn" href="#">En savoir plus</a>
+  </div>
 </section>
 
-<section>
-    <h2>Contact</h2>
-    <p><strong>Ville :</strong> Ziguinchor</p>
-    <p><strong>Email :</strong> contact@esebat-ziguinchor</p>
+<section id="electrotechnique">
+  <div class="card">
+    <h2>Électrotechnique / Génie Électrique</h2>
+    <p>Formation de spécialistes en énergie électrique, installations industrielles et systèmes automatisés.</p>
+    <a class="btn" href="#">En savoir plus</a>
+  </div>
+</section>
+
+<section id="electromecanique">
+  <div class="card">
+    <h2>Electromécanique & Systèmes Automatisés (EMSA)</h2>
+    <p>Combine mécanique et électricité pour former des professionnels capables de gérer des systèmes industriels complexes.</p>
+    <a class="btn" href="#">En savoir plus</a>
+  </div>
+</section>
+
+<section id="geometre">
+  <div class="card">
+    <h2>Géomètre-Topographe</h2>
+    <p>Formation d’experts en mesures topographiques, cartographie et gestion des terrains pour la construction et l’aménagement.</p>
+    <a class="btn" href="#">En savoir plus</a>
+  </div>
 </section>
 
 <footer>
-    <p>© 2026 ESEBAT Ziguinchor – Tous droits réservés</p>
+  © 2026 – ESEBAT Ziguinchor | Tous droits réservés
 </footer>
 
 </body>
